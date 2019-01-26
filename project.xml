@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <set name="windowwidth" value="198" />
+  <set name="windowheight" value="220" />
+  
+	<meta 
+    title="Gestalt_3.1" 
+    package="com.increpare.Gestalt_3.1" 
+    version="1.0.0" 
+    company="Haxegon" 
+  />
+  
+  <app swf-version="17.0" if="flash"/>
+	<app 
+      main="haxegon.Load"
+      path="bin" 
+      file="Gestalt_31" 
+   />
+
+  <window width="${windowwidth}" height="${windowheight}" if="flash || cpp || neko"></window>
+  <window width="0" height="0" if="html5 || mobile"></window>
+	 
+	<window
+      fps="30"
+      background="0x7869c4"
+      orientation="landscape"
+      hardware="true"
+      vsync="true"
+      allow-high-dpi="true"
+   ></window>
+   
+	<source path="src" />
+	<source path="plugins" />
+	<haxelib name="openfl" />
+	<haxelib name="haxegon" />
+
+	<haxedef name="windowwidth" value="${windowwidth}" />
+  <haxedef name="windowheight" value="${windowheight}" />
+  
+	<assets path="data" exclude="*.mp3" if="cpp || neko"/>
+	<assets path="data" exclude="*.ogg" if="flash"/>
+	<assets path="data" if="html5"/>
+
+	<icon path="data/icon.png"/>
+</project>

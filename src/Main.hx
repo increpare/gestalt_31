@@ -273,6 +273,48 @@ class Main {
 			"cy4:Ziely4:zielaay7:kugel_5R2R2hay7:kugel_6R3R3hhy9:werkzeugeatttttttttttttttttttthg",
 			[19,2,19,2,2,19,2,19,19,2,19,2,2,19,2,19,19,2,19,2],
 		],
+		//vsplitter+füller - ok ziemlich einfach?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_3y7:kugel_4haR2R3haR2R3hhy9:werkzeugeatttttttttttttttttttthg",
+			[3,6,3,6,6,3,6,3,3,6,3,6,6,3,6,3,3,6,3,6],
+		],
+		//verkehrsampel - kopier + vspliter (habe schon etw ähnlich?)
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[3,7,3,3,7,3,7,3,3,7,3,7,7,3,7,3,3,7,3,7],
+		],
+		//verkehrsampel - vsplitter und sauger - ziemlich einfach  aber ich mag es
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3],
+		],
+		//snake + hsplitter.  must be aware situationally but not crazy hard
+[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_4R2hanR3nhaR2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
+			[4,12,4,12,12,3,12,3,4,12,4,12,12,3,12,3,4,12,4,12],
+		],
+		//verkehrsampel - v deleter and diagonal spiegel - nicht so gut / sehr einfach. aber nicht schlect?
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[15,3,15,3,3,15,3,15,15,3,15,3,3,15,3,15,15,3,15,3],
+		],
+		//grower + hsplitter - pretty easy
+		[
+			"v1",
+			"cy4:Ziely4:zielaau2hay6:halm_2y6:halm_1hau2hhy9:werkzeugeatttttttttttttttttttthg",
+			[20,4,20,4,4,20,4,20,20,4,20,4,4,20,4,20,20,4,20,4],
+		],
+		//schlage+fußgänger - weiß nicht ob es gut ist oder nicht...zu einfach..
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_4R2R2haR2y7:kugel_2R2haR2R2R2hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,5,5,5,5,5,5,5,12,12,12,12,13,13,13,13,13,13,13,13],
+		],
 	];
 
 

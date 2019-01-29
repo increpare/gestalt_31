@@ -33,6 +33,7 @@ class AnimationFrame {
 class LevelZustand{
 	public var i:Array<Array<String>>;
 	public var sp:Array<Array<String>>;
+	public var names:Array<Array<Int>>;
 	public var hash:String;
 	public function new(){};
 }
@@ -48,7 +49,9 @@ class Ziel{
 
 class Main {
 
-	var zeigitemmenu:Bool=true;
+	var zeigitemmenu:Bool=false;
+	var itemmenu_ziel_x:Int=-1;
+	var itemmenu_ziel_y:Int=-1;
 
 	var enableEditor:Bool=true;
 	var zeigBetaNotice:Bool=false;
@@ -114,38 +117,162 @@ class Main {
 			"cy4:Ziely4:zielaay7:kugel_6R2R2hay7:kugel_1R3R3hau2R3haR3R3R3haR2R2R2hhy9:werkzeugeatttttttttttttttttttthg",	
 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]				
 		],
+		//trivial custom back
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
+			"cy4:Ziely4:zielaay7:kugel_6ny7:kugel_5hau3hay7:kugel_2ny7:kugel_4hhy9:werkzeugeatttttttttttttttttttthg",
+			[13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13],
 		],
+		//custom less trivial but still not great
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
+			"cy4:Ziely4:zielaau2hay7:kugel_4y7:kugel_2hay7:kugel_5y7:kugel_6hau2hhy9:werkzeugeatttttttttttttttttttthg",
+			[3,4,3,4,4,7,4,7,3,4,3,4,4,3,4,3,3,7,3,7],
 		],
+		//langweilig
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
-		],
+			"cy4:Ziely4:zielaay7:kugel_2u2hay7:kugel_1y7:kugel_5nhaR2y7:kugel_4y7:kugel_3haR3R4nhaR2u2hhy9:werkzeugeatttttttttttttttttttthg",
+			[16,17,16,17,17,16,17,16,16,17,16,17,17,16,17,16,16,17,17,16],
+		],		
+		//schlangerätsel
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
-		],
+			"cy4:Ziely4:zielaay7:kugel_2R2R2hay7:kugel_4R3R3hay7:kugel_1R4R4hay7:kugel_3R5R5hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
+		],	
+		//schalnge2 - ok? oder night?
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
+			"cy4:Ziely4:zielaay7:kugel_4y7:kugel_5y7:kugel_2y7:kugel_1hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
 		],
+		//schlange 3 - nicht schlecht!
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
+			"cy4:Ziely4:zielaay7:kugel_2hay7:kugel_1hay7:kugel_4hay7:kugel_3hay7:kugel_5hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
 		],
-
-
+		//hat 1 - zu einfach?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1R2R2hay7:kugel_5R3R2hay7:kugel_2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
+			[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+		],
+		//copier + reaktivator - ok?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_5R2hay7:kugel_2y7:kugel_4R4haR2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
+			[7,7,7,18,7,7,7,18,7,7,7,18,7,7,7,18,7,7,7,18],
+		],
+		//sehr einfach, aber vllt ok?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_5hany7:kugel_4nhay7:kugel_2ny7:kugel_6hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,13,8,13,13,8,13,8,8,13,8,13,13,8,13,8,8,13,8,13],
+		],
+		//verkehrsampel - einfach aber nicht schlect?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,13,8,13,13,8,13,8,8,13,8,13,13,8,13,8,8,13,8,13],
+		],
+		//verkehrsampel - drehen - zu einfach? ok für level1?
+		[
+			"v1",
+			"cy4:Ziely4:zielaau3hany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[14,13,14,13,13,14,13,14,14,13,14,13,13,14,13,14,14,13,14,13],
+		],
+		//verkehrsampel - spiegeln - zu einfach?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15],
+		],
+		//verkerhsampel mit horizontal/vertical umkehren
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[16,16,16,16,17,17,17,17,16,16,16,16,17,17,17,17,16,16,16,16],
+		],
+		//verkehrsampel - bomben - nicht schlecht!
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[13,13,13,13,13,19,19,19,13,19,19,19,13,19,19,19,13,19,19,19],
+		],
+		//verkehrsampel - avocado - tatsächlich nicht so schwierig
+		[
+			"v1",
+			"cy4:Ziely4:zielaay6:halm_1hay6:halm_4hay6:halm_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[13,13,13,13,13,20,20,20,13,20,20,20,13,20,20,20,13,20,20,20],
+		],
+		//haut + globaler löscher
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_4y7:kugel_5haR3R2haR2R3hhy9:werkzeugeatttttttttttttttttttthg",
+			[1,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2],
+		],
+		//füllugpuzzle, nicht so schwierig?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1R2haR2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[1,1,1,1,6,1,6,1,1,1,1,1,6,1,6,1,1,1,1,1],
+		],
+		//kopie/globaler löscher - ich finde dieses puzzle ganz ok
+		[
+			"v1",
+			"cy4:Ziely4:zielaau3hay7:kugel_1nR2hau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1],
+		],
+		//globaler löscher + schlange, einfacher version
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_3haR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
+		],
+		//globaler löscher + schlange, schwierige version
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_1ny7:kugel_3hanR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
+		],
+		//wachsen+globaler löscher - ok?
+		[
+			"v1",
+			"cy4:Ziely4:zielaau3hay6:halm_2y6:halm_4y6:halm_1hay7:kugel_2y7:kugel_4y7:kugel_1hhy9:werkzeugeatttttttttttttttttttthg",
+			[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,20,20,20,20],
+		],
+		//haut+vertikallöscher verkehrsampel
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[2,3,2,3,3,2,3,2,2,3,2,3,3,2,3,2,2,3,2,3],
+		],
+		//haut+füllung verkehrsampel
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[2,2,2,2,6,6,6,6,6,6,6,6,6,6,6,6,2,2,2,2],
+		],
+		//verkehrsampel, kopier + haut - nicht so gut?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1R2hay7:kugel_4R3hay7:kugel_2R4hhy9:werkzeugeatttttttttttttttttttthg",
+			[7,2,7,2,2,7,2,7,7,2,7,2,2,7,2,7,7,2,7,2],
+		],
+		//verkehrsampel, haut + sauger
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_4y7:kugel_2haR2R3R4hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,2,2,2,8,2,2,2,8,2,2,2,8,2,2,2,8,2,2,2],
+		],
+		//bombe+haut - ok?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_5R2R2hay7:kugel_6R3R3hhy9:werkzeugeatttttttttttttttttttthg",
+			[19,2,19,2,2,19,2,19,19,2,19,2,2,19,2,19,19,2,19,2],
+		],
 	];
 
 
@@ -1341,31 +1468,14 @@ class Main {
 
 	function versuchfallenzulassen(x:Int,y:Int){
 		var erlauben=false;
-		
-		var j = 0;
-		var i = 3;
-		if (x==i&&y==j){
-			return;
-		}
-		if (animationen.length>0){
-			if (animationen[0].vor_brett[j][i]==null){
-				return;
-			}
-		}
-		if (szs_brett[0][3]!=null && szs_brett[1][3]==null){
-			erlauben=true;
-		}
 
-		if (!erlauben){
-			return;
-		}
+		var z_names:Array<Int> = ziele[aktuellesZielIdx][2];
 
 		var startframe = new AnimationFrame();
 		startframe.vor_brett = Copy.copy(szs_brett);
 		startframe.nach_brett = Copy.copy(szs_brett);
 		startframe.abweichung = leererAbweichungsgitter();
 		var animation = startframe;
-		animationen.push(animation);
 
 
 		var startframe2 = new AnimationFrame();
@@ -1373,89 +1483,140 @@ class Main {
 		startframe2.nach_brett = Copy.copy(szs_brett);
 		startframe2.abweichung = leererAbweichungsgitter();
 		var animation2 = startframe2;
-		animationen.push(animation2);
-
-		{
-			// var j = sp_zeilen-1;
-			// while(j>=0){
-				// for (i in 0...sp_spalten){
-						animation2.nach_brett[j+1][i]=animation2.nach_brett[j][i];
-						animation2.nach_brett[j][i]=null;
-						animation.abweichung[j][i]=0;
-						animation2.abweichung[j+1][i]=0;
-				// }
-				// j--;
-			// }	
-		}
 
 		animation.maxabweichung=0;
 		animation2.maxabweichung=0;
+		var etwgemacht=false;
+		for (i in 0...sp_spalten){
+			for (j in 0...sp_zeilen){
+					
+				if (x==i&&y==j){
+					continue;
+				}
+				
+				if (animationen.length>0){
+					if (animationen[0].vor_brett[j][i]==null){
+						continue;
+					}
+				}
 
+				var bgname = z_names[i+sp_spalten*j];
+				if (bgname!=9){
+					continue;
+				}
+
+				if (szs_brett[j][i]!=null && ( (j==sp_zeilen-1) ||szs_brett[j+1][i]==null) ){
+					erlauben=true;
+				}
+
+				if (!erlauben){
+					continue;
+				}
+
+				{
+					// var j = sp_zeilen-1;
+					// while(j>=0){
+						// for (i in 0...sp_spalten){
+							
+
+								etwgemacht=true;
+								if (j<(sp_zeilen-1) ){
+									animation2.nach_brett[j+1][i]=animation2.nach_brett[j][i];
+									animation2.abweichung[j+1][i]=0;
+								}
+								animation2.nach_brett[j][i]=null;
+								animation.abweichung[j][i]=0;
+						// }
+						// j--;
+					// }	
+				}
+
+			}
+		}
+
+		if (etwgemacht){
+			animationen.push(animation);
+			animationen.push(animation2);
+		}
 
 	}
 
 	function versuchaufzuwachsen(x:Int,y:Int){
-		
-		var targets=[];
+		var z_names:Array<Int> = ziele[aktuellesZielIdx][2];
 
 
-		var i=1;
-		var j=4;
-		if (i==x&&y==j){
-			return;
-		}
-
-		if (animationen.length>0){
-			if (animationen[0].vor_brett[j][i]==null){
-				return;
-			}
-		}
-
-		// for (j in 0...sp_zeilen){
-			// for (i in 0...sp_spalten){
-				if (szs_brett[j][i]!=null && szs_brett[j][i].charAt(0)=="k" ){
-					var k = j-1;
-					var farbe = szs_brett[j][i].charAt(6);
-
-					while(k>=0){
-						var t = szs_brett[k][i];
-						if (t==null){
-							targets.push([i,k]);
-							break;
-						}
-						if (t.charAt(0)!="h" || t.charAt(5)!=farbe){
-							break;
-						}
-						k--;
-					}
-				}
-			// }
-		// }
-		if (targets.length==0){
-			return;
-		}
-		
-		var farbe = szs_brett[j][i].charAt(6);
 
 		var startframe = new AnimationFrame();
 		startframe.vor_brett = Copy.copy(szs_brett);
 		startframe.nach_brett = Copy.copy(szs_brett);
 		startframe.abweichung = leererAbweichungsgitter();
+		startframe.maxabweichung=1;
+		
 		var animation = startframe;
-		animationen.push(animation);
+		var modified=false;
+
+		for (i in 0...sp_spalten){
+			for (j in 0...sp_zeilen){
+						
+				if (i==x&&y==j){
+					continue;
+				}
 
 
+					var bgname = z_names[i+sp_spalten*j];
+					if (bgname!=20){
+						continue;
+					}
 
-		for (p in targets){
-			var x = p[0];
-			var y = p[1];
-			animation.nach_brett[y][x]="halm_"+farbe;
-			animation.abweichung[y][x]=1;
+
+				if (animationen.length>0){
+					if (animationen[0].vor_brett[j][i]==null){
+						continue;
+					}
+				}
+
+				var targets=[];
+				// for (j in 0...sp_zeilen){
+					// for (i in 0...sp_spalten){
+						if (szs_brett[j][i]!=null && szs_brett[j][i].charAt(0)=="k" ){
+							var k = j-1;
+							var farbe = szs_brett[j][i].charAt(6);
+							trace("farbe " +szs_brett[j][i]+"("+farbe+").");
+							while(k>=0){
+								var t = szs_brett[k][i];
+								if (t==null){
+									targets.push([i,k]);
+									break;
+								}
+								if (t.charAt(0)!="h" || t.charAt(5)!=farbe){
+									break;
+								}
+								k--;
+							}
+						}
+					// }
+				// }
+				if (targets.length==0){
+					continue;
+				}
+				
+				var farbe = szs_brett[j][i].charAt(6);
+
+				for (p in targets){
+					var x = p[0];
+					var y = p[1];
+					animation.nach_brett[y][x]="halm_"+farbe;
+					animation.abweichung[y][x]=1;
+				}
+				modified=true;
+			}
 		}
 
-		animation.maxabweichung=1;
 
+		if (modified){
 
+			animationen.push(animation);
+		}
 	}
 
 	function tuePlatzierung(hoverziel_x:Int,hoverziel_y:Int,z_name:String,nachkram:Bool){	
@@ -1708,11 +1869,14 @@ function regenAllText(){
 		var curUndoPos = undoPos[aktuellesZielIdx];
 		var curUndoStack = undoStack[aktuellesZielIdx];
 		curUndoStack.splice(curUndoPos+1,curUndoStack.length);
+		
+		var curNames = ziele[aktuellesZielIdx][2];
 
 		var lzs = new LevelZustand();
 		lzs.i=Copy.copy(szs_inventory);
 		lzs.sp=Copy.copy(szs_brett);
-		lzs.hash=Json.stringify([szs_inventory,szs_brett]);
+		lzs.names=Copy.copy(curNames);
+		lzs.hash=Json.stringify([szs_inventory,szs_brett,lzs.names]);
 
 		var dieser_undoStack = undoStack[aktuellesZielIdx];
 		if (dieser_undoStack.length>0){
@@ -1734,7 +1898,8 @@ function regenAllText(){
 		
 		animationen.splice(0,animationen.length);	
 		animPos=0;		
-		var curhash = Json.stringify([szs_inventory,szs_brett]);
+		var z_names:Array<Int> = ziele[aktuellesZielIdx][2];
+		var curhash = Json.stringify([szs_inventory,szs_brett,z_names]);
 		var i = undoPos[aktuellesZielIdx];
 		while (i>=0){
 			var zs = undoStack[aktuellesZielIdx][i];
@@ -1745,6 +1910,7 @@ function regenAllText(){
 				do_playSound(0);
 				undoPos[aktuellesZielIdx]=i;
 				forcerender=true;
+				ziele[aktuellesZielIdx][2]=Copy.copy(z_names);
 				return;
 			} else {
 				if (i>0){
@@ -1753,6 +1919,7 @@ function regenAllText(){
 			}
 			i--;
 		}
+		forcerender=true;
 	}
 
 function tueRedo(){
@@ -1805,10 +1972,24 @@ function tueRedo(){
 		aktuellesZiel=new_z;
 
 		var s = serializer.toString();
-		ziele[aktuellesZielIdx]=[""+version,s];
+		
+		var z_names:Array<Int> = Copy.copy(ziele[aktuellesZielIdx][2]);
 
+		ziele[aktuellesZielIdx]=[""+version,s,z_names];
+
+		var toprint='[
+			"v1",\n';
+		toprint+='			"'+s+'",\n';
+		toprint+='			[';
+		for (i in 0...z_names.length){
+			if (i>0){
+				toprint+=",";
+			}
+			toprint+=""+z_names[i];
+		}
+		toprint+='],\n		],';
 		#if html5 
-			Browser.alert('"'+s+'",');
+			Browser.alert(toprint);
 		#end
 
 		trace(s);
@@ -1853,6 +2034,45 @@ function tueRedo(){
 	}
 
 	function update() {	
+
+		if (zeigitemmenu){
+			var inputs = [
+				Key.ONE,
+				Key.TWO,
+				Key.THREE,
+				Key.FOUR,
+				Key.FIVE,
+				Key.Q,
+				Key.W,
+				Key.E,
+				Key.R,
+				Key.T,
+				Key.A,
+				Key.S,
+				Key.D,
+				Key.F,
+				Key.G,
+				Key.Z,
+				Key.X,
+				Key.C,
+				Key.V,
+				Key.B ];
+			for (i in 0...inputs.length){
+				if (Input.justpressed(inputs[i])){
+					var item_index=i+1;
+					var position_index=itemmenu_ziel_x+4*itemmenu_ziel_y;
+					var z_names:Array<Int> = ziele[aktuellesZielIdx][2];
+					if (z_names[position_index]!=item_index){
+						z_names[position_index]=item_index;
+						forcerender=true;
+						zeigitemmenu=false;
+						zustandSpeichern();
+						return;
+					}
+				}
+			}
+		}
+
 		zeigabout=false;
 		zeigende=false;
 		
@@ -1891,11 +2111,13 @@ function tueRedo(){
 			!Input.delaypressed(Key.U,keyrepeat) &&
 			!Input.justpressed(Key.E) &&
 			!Input.justpressed(Key.Q) &&
+			!Input.justpressed(Key.SHIFT) &&
 			!Input.justpressed(Key.W) &&
 			!Input.justpressed(Key.O) &&
 			!Input.justpressed(Key.I) &&
 			!Input.delaypressed(Key.LEFT,keyrepeat) &&
 			!Input.delaypressed(Key.RIGHT,keyrepeat) &&
+			zeigitemmenu==false &&
 			animationen.length==0 &&
 			forcerender==false
 			)
@@ -1903,6 +2125,12 @@ function tueRedo(){
 				return;
 		}
 
+		if (Input.justreleased(Key.SHIFT)){
+			if (zeigitemmenu){
+				zeigitemmenu=false;
+			}
+		}
+		
 		Text.font=dict_internal["$FONT_BIG"];
 		if (Globals.state.sprache=="zh"){
 			Text.size=12;
@@ -2066,8 +2294,10 @@ function tueRedo(){
 
 			var gx = i;
 			var gy = 0;
-			
-			var px = 74 + 9*gx;
+			var gw=117;
+			var step = Math.floor(117/ziele.length);
+
+			var px = 74 + step*gx;
 			var py = 22;
 			
 			if (editmodus && Mouse.leftclick()){
@@ -2077,12 +2307,18 @@ function tueRedo(){
 			}
 
 			if (geloest[i]==ziele[i][0]){
-				Gfx.drawimage(px+1,py+1,"31/geloest");			
-			} 
+				// Gfx.drawimage(px+1,py+1,"31/geloest");	
+				Gfx.fillbox(px,py,step-1,20,0x008282);	
+			}  else {
+				Gfx.fillbox(px,py,step-1,20,0x000000);
+			}
 
 			if (i==aktuellesZielIdx){
-				Gfx.drawimage(px,py,"31/level_highlight");
-			}
+				// Gfx.drawimage(px,py,"31/level_highlight");			
+				Gfx.drawline(px,py+1,px+step-1,py,0xffff00);		
+				Gfx.drawline(px,py+1+19,px+step-1,py+19,0xffff00);
+				// Gfx.drawline(px,py+20,px+step-1,py+20,0xffff00);
+			}  
 
 		}
 	
@@ -2153,7 +2389,7 @@ function tueRedo(){
 
 		if (undoPos[aktuellesZielIdx]>0){
 			if (IMGUI.pressbutton(
-					"rückgängig",
+					"undo",
 					"31/button_sm",
 					"31/button_sm_down",
 					"31/btn_ruckgaengig",
@@ -2374,9 +2610,6 @@ function tueRedo(){
 					Gfx.drawimage(19+17*i,70+17*j,"31/bg_"+z_names[i+sp_spalten*j]);
 					Gfx.drawimage(19+17*i,70+17*j,"31/"+inhalt);
 				} else {
-					trace("A "+(i+sp_spalten*j));
-					trace("B 31/ol_"+z_names[i+sp_spalten*j]);
-					trace("C "+z_names);
 					Gfx.drawimage(19+17*i,70+17*j,"31/ol_"+z_names[i+sp_spalten*j]);
 				}
 				if (abw==frame){
@@ -2392,6 +2625,9 @@ function tueRedo(){
 			}
 			if (Input.justpressed(Key.W)){
 				input=2;
+			}
+			if (Input.justpressed(Key.SHIFT)){
+				input=3;
 			}
 			if (input>0){
 				var hoverziel_x=-1;
@@ -2434,9 +2670,14 @@ function tueRedo(){
 					if (input==1){
 						editor_tl_x=hoverziel_x;
 						editor_tl_y=hoverziel_y;
-					} else {
+					} else if (input==2){
 						editor_br_x=hoverziel_x+1;
 						editor_br_y=hoverziel_y+1;
+					} else if (input==3){
+						zeigitemmenu=true;
+						itemmenu_ziel_x=hoverziel_x;
+						itemmenu_ziel_y=hoverziel_y;
+						forcerender=true;
 					}
 					if (editor_tl_x>editor_br_x){
 						var t = editor_tl_x;
@@ -2531,7 +2772,21 @@ function tueRedo(){
 		
 	
 		if (zeigitemmenu){
-			Gfx.drawimage(98,79,"editorkiste");			
+			Gfx.drawimage(98,79,"editorkiste");		
+			var chars=["1","2","3","4","5",
+			"Q","W","E","R","T",
+			"A","S","D","F","G",
+			"Z","X","C","V","B"
+			];
+
+			for (i in 1...21){
+				var x = 99+17*(i-1)%5;
+				var y = 80+17*Math.floor((i-1)/5);
+				Gfx.drawimage(x,y,"31/bg_"+i);
+				Text.display(x+1,y,chars[i-1],Col.WHITE);
+
+			}	
+			Gfx.drawimage(19+17*itemmenu_ziel_x,70+17*itemmenu_ziel_y,"31/highlightcursor");
 		}
 
 		if (zeigabout||zeigende){

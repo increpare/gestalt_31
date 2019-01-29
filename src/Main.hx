@@ -2307,10 +2307,10 @@ function tueRedo(){
 
 
 		var zielb_x=102;
-		var zielb_y=70;
+		var zielb_y=65;
 
 		var zielb_w=77;
-		var zielb_h=77;
+		var zielb_h=88;
 		
 		//ziel zeigen
 		if (aktuellesZielIdx>=48){
@@ -2531,7 +2531,7 @@ function tueRedo(){
 		
 	
 		if (zeigitemmenu){
-						
+			Gfx.drawimage(98,79,"editorkiste");			
 		}
 
 		if (zeigabout||zeigende){

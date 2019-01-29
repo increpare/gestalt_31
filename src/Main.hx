@@ -48,6 +48,8 @@ class Ziel{
 
 class Main {
 
+	var zeigitemmenu:Bool=true;
+
 	var enableEditor:Bool=true;
 	var zeigBetaNotice:Bool=false;
 
@@ -66,31 +68,36 @@ class Main {
 
 	public var aktuellesZiel:Ziel;	
 	public var aktuellesZielIdx=0;
-	public var ziele:Array<Array<String>> = [
+	public var ziele:Array<Array<Dynamic>> = [
 		//++
 		[
 			"v1",
-			"cy4:Ziely4:zielaany7:kugel_2nhay7:kugel_4y7:kugel_1R3hanR2nhaR3R4R3hanR2nhhy9:werkzeugeatttttttttttttttttttthg"			
+			"cy4:Ziely4:zielaany7:kugel_2nhay7:kugel_4y7:kugel_1R3hanR2nhaR3R4R3hanR2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		//vier wurzeln - zu einfach
 		[
 			"v1",
 			"cy4:Ziely4:zielaay6:halm_2haR2haR2haR2hhy9:werkzeugeatttttttttttttttttttthg",		
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		//wechselwurzeln
 		["v1",
 			"cy4:Ziely4:zielaay7:kugel_2nR2hanR2nhaR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 
 		// großes X
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_2nR2hany7:kugel_4nhaR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		//schwierig >>
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_1R2nhanR2R2hau2y7:kugel_2hanR2R2haR2R2nhhy9:werkzeugeatttttttttttttttttttthg",		
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 			
 		],
 		//oo
@@ -99,35 +106,43 @@ class Main {
 		[
 			"v1",
 			"cy4:Ziely4:zielaau3hay7:kugel_6R2nhaR2R2nhaR2R2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		//metroidvania
 		[
 			"v1",
-			"cy4:Ziely4:zielaay7:kugel_6R2R2hay7:kugel_1R3R3hau2R3haR3R3R3haR2R2R2hhy9:werkzeugeatttttttttttttttttttthg",					
+			"cy4:Ziely4:zielaay7:kugel_6R2R2hay7:kugel_1R3R3hau2R3haR3R3R3haR2R2R2hhy9:werkzeugeatttttttttttttttttttthg",	
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]				
 		],
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg"
+			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg"
+			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg"
+			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg"
+			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg"
+			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 		[
 			"v1",
-			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg"
+			"cy4:Ziely4:zielaau3hau3hau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 
 
@@ -1460,55 +1475,55 @@ class Main {
 
 		var c_idx=hoverziel_x+sp_spalten*hoverziel_y;
 
-		var z_names = ["s5","s10","s6","s9","s11","s7","s14","s4","s17","s1","s19","s16","s2","s15","s13","s3","s12","s20","s8","s18"];
+		var z_names:Array<Int> = ziele[aktuellesZielIdx][2];
 		var z_n=z_names[c_idx];
 		trace("z_n "+z_n);
 		switch(z_n){
-			case "s1":
+			case 1:
 				loeschen(animation,hoverziel_x,hoverziel_y);
-			case "s2":
+			case 2:
 				behaaren(animation,hoverziel_x,hoverziel_y);			
 
-			case "s3":
+			case 3:
 				spalte_entleeren(animation,hoverziel_x,hoverziel_y);			
-			case "s4":
+			case 4:
 				zeile_entleeren(animation,hoverziel_x,hoverziel_y);
 			
-			case "s5":
+			case 5:
 				spazieren(animation,hoverziel_x,hoverziel_y);
-			case "s6":
+			case 6:
 				fuellen(animation,hoverziel_x,hoverziel_y);
-			case "s7":
+			case 7:
 				spiegelkopien(animation,hoverziel_x,hoverziel_y);	
 			
-			case "s8":
+			case 8:
 				ziehen(animation,hoverziel_x,hoverziel_y);
-			case "s9":
+			case 9:
 			
-			case "s10":
+			case 10:
 			
-			case "s11":
+			case 11:
 			
-			case "s12":
+			case 12:
 				spiralen(animation,hoverziel_x,hoverziel_y);	
 			
-			case "s13":
+			case 13:
 				schieben(animation,hoverziel_x,hoverziel_y);
 			
-			case "s14":
+			case 14:
 				drehen(animation,hoverziel_x,hoverziel_y);
-			case "s15":
+			case 15:
 				schraegspiegeln(animation,hoverziel_x,hoverziel_y);	
-			case "s16":
+			case 16:
 				spiegeln_hinunten(animation,hoverziel_x,hoverziel_y);		
-			case "s17":
+			case 17:
 				spiegeln_hinoben(animation,hoverziel_x,hoverziel_y);
-			case "s18":
+			case 18:
 				wiederholen(animation,hoverziel_x,hoverziel_y);
-			case "s19":
+			case 19:
 				bomben(animation,hoverziel_x,hoverziel_y);
 			
-			case "s20":
+			case 20:
 
 			default:
 				trace(z_name+" nicht gefunden.");
@@ -1816,6 +1831,18 @@ function tueRedo(){
 	var zeigabout:Bool=false;
 	var zeigende:Bool=false;
 
+	public static function shuffle(arr:Array<Int>):Array<Int> {
+		var tmp:Int, j:Int, i:Int = arr.length;
+		while (--i > 0) {
+			j = Random.int(0, i);
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+		}
+		
+		return arr;
+	}
+
 	function betaNotice(){
 		if (zeigBetaNotice){
 			var oldfont = Text.font;
@@ -1865,6 +1892,8 @@ function tueRedo(){
 			!Input.justpressed(Key.E) &&
 			!Input.justpressed(Key.Q) &&
 			!Input.justpressed(Key.W) &&
+			!Input.justpressed(Key.O) &&
+			!Input.justpressed(Key.I) &&
 			!Input.delaypressed(Key.LEFT,keyrepeat) &&
 			!Input.delaypressed(Key.RIGHT,keyrepeat) &&
 			animationen.length==0 &&
@@ -2001,6 +2030,20 @@ function tueRedo(){
 
 		if (editmodus&&Input.justpressed(Key.P)){
 			drueckBrett();
+		}
+
+		if (editmodus&&Input.justpressed(Key.I)){
+			var inhalt:Array<Int>=ziele[aktuellesZielIdx][2];
+			for (i in 0...inhalt.length){
+				inhalt[i]=Random.int(1,20);
+			}
+			forcerender=true;
+		}
+		if (editmodus&&Input.justpressed(Key.O)){
+			var ar:Array<Int> = ziele[aktuellesZielIdx][2];
+			trace(ar);
+			shuffle(ar);
+			forcerender=true;
 		}
 
 		if (Mouse.leftclick()){
@@ -2263,9 +2306,6 @@ function tueRedo(){
 		// Gfx.drawimage(Mouse.x-3,Mouse.y-3,"cursor_finger");
 
 
-	
-
-
 		var zielb_x=102;
 		var zielb_y=70;
 
@@ -2319,6 +2359,7 @@ function tueRedo(){
 			abweichungsbrett = animation.abweichung;
 		}
 
+		var z_names:Array<Int> = ziele[aktuellesZielIdx][2];
 		for (j in 0...sp_zeilen){
 			for (i in 0...sp_spalten){
 				var inhalt = brett_vor[j][i];
@@ -2328,10 +2369,15 @@ function tueRedo(){
 					if (abw<=frame){
 						inhalt=brett_nach[j][i];
 					}
-				}
+				}				
 				if (inhalt!=null){
-					Gfx.drawimage(19+17*i,70+17*j,"31/s"+(i+sp_spalten*j+1));
+					Gfx.drawimage(19+17*i,70+17*j,"31/bg_"+z_names[i+sp_spalten*j]);
 					Gfx.drawimage(19+17*i,70+17*j,"31/"+inhalt);
+				} else {
+					trace("A "+(i+sp_spalten*j));
+					trace("B 31/ol_"+z_names[i+sp_spalten*j]);
+					trace("C "+z_names);
+					Gfx.drawimage(19+17*i,70+17*j,"31/ol_"+z_names[i+sp_spalten*j]);
 				}
 				if (abw==frame){
 					Gfx.drawimage(19+17*i,70+17*j,"cursor_aktiv");
@@ -2483,6 +2529,11 @@ function tueRedo(){
 		}
 
 		
+	
+		if (zeigitemmenu){
+						
+		}
+
 		if (zeigabout||zeigende){
 			IMGUI.tooltipstr=null;
 		}

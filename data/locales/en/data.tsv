@@ -21,8 +21,8 @@ $GOAL_X_OF_Y	Goal (<X> of <Y>)
 $SOLVED	Solved	
 $SOLVE	Solve	
 $CONGRATS	Congratulations	
-$CONGRATS_SENTENCE	Congratulations, you solved all of the levels!	
-$WE_ARE_HAPPY	Thank you so much for playing the game. We hope you had a good time doing so :)	
+$CONGRATS_SENTENCE	Congratulations, you solved all of my levels!	
+$WE_ARE_HAPPY	Thank for playing - sure hope yer had a good time! :)	
 $TEXT_RESET	Reset	
 $TOOLTIP_RESET	Reset the game. This will delete all save data.  Are you sure?	
 $TABLEAU	Tableau	

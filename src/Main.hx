@@ -53,8 +53,8 @@ class Main {
 	var itemmenu_ziel_x:Int=-1;
 	var itemmenu_ziel_y:Int=-1;
 
-	var enableEditor:Bool=true;
-	var zeigBetaNotice:Bool=true;
+	var enableEditor:Bool=false;
+	var zeigBetaNotice:Bool=false;
 
 	public var letztes_hoverziel_x:Int=-1;
 	public var letztes_hoverziel_y:Int=-1;
@@ -72,13 +72,6 @@ class Main {
 	public var aktuellesZiel:Ziel;	
 	public var aktuellesZielIdx=0;
 	public var ziele:Array<Array<Dynamic>> = [
-//1
-		//verkehrsampel - vsplitter und sauger - ziemlich einfach  aber ich mag es
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3],
-		],
 //2
 		//verkehrsampel - einfach aber nicht schlect?
 		[
@@ -92,6 +85,14 @@ class Main {
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
 			[15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15],
+		],
+
+//1
+		//verkehrsampel - vsplitter und sauger - ziemlich einfach  aber ich mag es
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3],
 		],
 //4
 		//verkerhsampel mit horizontal/vertical umkehren
@@ -109,42 +110,42 @@ class Main {
 		],
 //6
 
-		//verkehrsampel - drehen - zu einfach? ok für level1?
-		[
-			"v1",
-			"cy4:Ziely4:zielaau3hany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[14,13,14,13,13,14,13,14,14,13,14,13,13,14,13,14,14,13,14,13],
-		],
+		// //verkehrsampel - drehen - zu einfach? ok für level1?
+		// [
+		// 	"v1",
+		// 	"cy4:Ziely4:zielaau3hany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhau3hhy9:werkzeugeatttttttttttttttttttthg",
+		// 	[14,13,14,13,13,14,13,14,14,13,14,13,13,14,13,14,14,13,14,13],
+		// ],
 //7
-		//haut+füllung verkehrsampel
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[2,2,2,2,6,6,6,6,6,6,6,6,6,6,6,6,2,2,2,2],
-		],
+		// //haut+füllung verkehrsampel
+		// [
+		// 	"v1",
+		// 	"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+		// 	[2,2,2,2,6,6,6,6,6,6,6,6,6,6,6,6,2,2,2,2],
+		// ],
 
 //8
-//haut+vertikallöscher verkehrsampel
-		[
-			"v1",
-			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[2,3,2,3,3,2,3,2,2,3,2,3,3,2,3,2,2,3,2,3],
-		],
+// //haut+vertikallöscher verkehrsampel
+// 		[
+// 			"v1",
+// 			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+// 			[2,3,2,3,3,2,3,2,2,3,2,3,3,2,3,2,2,3,2,3],
+// 		],
 
-//9
-//verkehrsampel - kopier + vspliter (habe schon etw ähnlich?)
-		[
-			"v1",
-			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[3,7,3,3,7,3,7,3,3,7,3,7,7,3,7,3,3,7,3,7],
-		],
-//10
-		//verkehrsampel - v deleter and diagonal spiegel - nicht so gut / sehr einfach. aber nicht schlect?
-		[
-			"v1",
-			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[15,3,15,3,3,15,3,15,15,3,15,3,3,15,3,15,15,3,15,3],
-		],
+// //9
+// //verkehrsampel - kopier + vspliter (habe schon etw ähnlich?)
+// 		[
+// 			"v1",
+// 			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+// 			[3,7,3,3,7,3,7,3,3,7,3,7,7,3,7,3,3,7,3,7],
+// 		],
+// //10
+// 		//verkehrsampel - v deleter and diagonal spiegel - nicht so gut / sehr einfach. aber nicht schlect?
+// 		[
+// 			"v1",
+// 			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+// 			[15,3,15,3,3,15,3,15,15,3,15,3,3,15,3,15,15,3,15,3],
+// 		],
 
 //11
 		//verkehrsampel, haut + sauger
@@ -169,12 +170,12 @@ class Main {
 			"cy4:Ziely4:zielaay6:halm_2haR2haR2haR2hhy9:werkzeugeatttttttttttttttttttthg",		
 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
-//14
-		//wechselwurzeln
-		["v1",
-			"cy4:Ziely4:zielaay7:kugel_2nR2hanR2nhaR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
-			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
-		],
+// //14
+// 		//wechselwurzeln
+// 		["v1",
+// 			"cy4:Ziely4:zielaay7:kugel_2nR2hanR2nhaR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
+// 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
+// 		],
 
 //15
 		// großes X
@@ -225,19 +226,19 @@ class Main {
 		],
 
 //21
-		//verkehrsampel, kopier + haut - nicht so gut?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1R2hay7:kugel_4R3hay7:kugel_2R4hhy9:werkzeugeatttttttttttttttttttthg",
-			[7,2,7,2,2,7,2,7,7,2,7,2,2,7,2,7,7,2,7,2],
-		],
-//22
-		//custom less trivial but still not great
-		[
-			"v1",
-			"cy4:Ziely4:zielaau2hay7:kugel_4y7:kugel_2hay7:kugel_5y7:kugel_6hau2hhy9:werkzeugeatttttttttttttttttttthg",
-			[3,4,3,4,4,7,4,7,3,4,3,4,4,3,4,3,3,7,3,7],
-		],
+// 		//verkehrsampel, kopier + haut - nicht so gut?
+// 		[
+// 			"v1",
+// 			"cy4:Ziely4:zielaay7:kugel_1R2hay7:kugel_4R3hay7:kugel_2R4hhy9:werkzeugeatttttttttttttttttttthg",
+// 			[7,2,7,2,2,7,2,7,7,2,7,2,2,7,2,7,7,2,7,2],
+// 		],
+// //22
+// 		//custom less trivial but still not great
+// 		[
+// 			"v1",
+// 			"cy4:Ziely4:zielaau2hay7:kugel_4y7:kugel_2hay7:kugel_5y7:kugel_6hau2hhy9:werkzeugeatttttttttttttttttttthg",
+// 			[3,4,3,4,4,7,4,7,3,4,3,4,4,3,4,3,3,7,3,7],
+// 		],
 //23
 		//langweilig
 		[
@@ -266,13 +267,13 @@ class Main {
 			"cy4:Ziely4:zielaay7:kugel_2hay7:kugel_1hay7:kugel_4hay7:kugel_3hay7:kugel_5hhy9:werkzeugeatttttttttttttttttttthg",
 			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
 		],
-//27
-		//hat 1 - zu einfach?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1R2R2hay7:kugel_5R3R2hay7:kugel_2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
-			[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-		],
+// //27
+// 		//hat 1 - zu einfach?
+// 		[
+// 			"v1",
+// 			"cy4:Ziely4:zielaay7:kugel_1R2R2hay7:kugel_5R3R2hay7:kugel_2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
+// 			[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+// 		],
 //28
 		//copier + reaktivator - ok?
 		[
@@ -281,12 +282,12 @@ class Main {
 			[7,7,7,18,7,7,7,18,7,7,7,18,7,7,7,18,7,7,7,18],
 		],
 //29
-		//sehr einfach, aber vllt ok?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_5hany7:kugel_4nhay7:kugel_2ny7:kugel_6hhy9:werkzeugeatttttttttttttttttttthg",
-			[8,13,8,13,13,8,13,8,8,13,8,13,13,8,13,8,8,13,8,13],
-		],
+		// //sehr einfach, aber vllt ok?
+		// [
+		// 	"v1",
+		// 	"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_5hany7:kugel_4nhay7:kugel_2ny7:kugel_6hhy9:werkzeugeatttttttttttttttttttthg",
+		// 	[8,13,8,13,13,8,13,8,8,13,8,13,13,8,13,8,8,13,8,13],
+		// ],
 //30
 		//haut + globaler löscher
 		[
@@ -295,12 +296,12 @@ class Main {
 			[1,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2],
 		],
 //31
-		//füllugpuzzle, nicht so schwierig?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1R2haR2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[1,1,1,1,6,1,6,1,1,1,1,1,6,1,6,1,1,1,1,1],
-		],
+		// //füllugpuzzle, nicht so schwierig?
+		// [
+		// 	"v1",
+		// 	"cy4:Ziely4:zielaay7:kugel_1R2haR2nhhy9:werkzeugeatttttttttttttttttttthg",
+		// 	[1,1,1,1,6,1,6,1,1,1,1,1,6,1,6,1,1,1,1,1],
+		// ],
 //32
 		//kopie/globaler löscher - ich finde dieses puzzle ganz ok
 		[
@@ -309,19 +310,19 @@ class Main {
 			[7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1],
 		],
 //33
-		//globaler löscher + schlange, einfacher version
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_3haR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
-			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
-		],
-//34
-		//globaler löscher + schlange, schwierige version
-		[
-			"v1",
-			"cy4:Ziely4:zielaany7:kugel_1ny7:kugel_3hanR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
-			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
-		],
+// 		//globaler löscher + schlange, einfacher version
+// 		[
+// 			"v1",
+// 			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_3haR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
+// 			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
+// 		],
+// //34
+// 		//globaler löscher + schlange, schwierige version
+// 		[
+// 			"v1",
+// 			"cy4:Ziely4:zielaany7:kugel_1ny7:kugel_3hanR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
+// 			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
+// 		],
 //35
 		//wachsen+globaler löscher - ok?
 		[
@@ -345,12 +346,12 @@ class Main {
 		],
 		
 //38
-		//snake + hsplitter.  must be aware situationally but not crazy hard
-[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_4R2hanR3nhaR2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
-			[4,12,4,12,12,3,12,3,4,12,4,12,12,3,12,3,4,12,4,12],
-		],
+// 		//snake + hsplitter.  must be aware situationally but not crazy hard
+// [
+// 			"v1",
+// 			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_4R2hanR3nhaR2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
+// 			[4,12,4,12,12,3,12,3,4,12,4,12,12,3,12,3,4,12,4,12],
+// 		],
 //39
 		//grower + hsplitter - pretty easy
 		[
@@ -359,12 +360,12 @@ class Main {
 			[20,4,20,4,4,20,4,20,20,4,20,4,4,20,4,20,20,4,20,4],
 		],
 //40
-		//schlage+fußgänger - weiß nicht ob es gut ist oder nicht...zu einfach..
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_4R2R2haR2y7:kugel_2R2haR2R2R2hhy9:werkzeugeatttttttttttttttttttthg",
-			[5,5,5,5,5,5,5,5,12,12,12,12,13,13,13,13,13,13,13,13],
-		],
+		// //schlage+fußgänger - weiß nicht ob es gut ist oder nicht...zu einfach..
+		// [
+		// 	"v1",
+		// 	"cy4:Ziely4:zielaay7:kugel_4R2R2haR2y7:kugel_2R2haR2R2R2hhy9:werkzeugeatttttttttttttttttttthg",
+		// 	[5,5,5,5,5,5,5,5,12,12,12,12,13,13,13,13,13,13,13,13],
+		// ],
 //41
 		//complex - 4 gegenständer mit reaktivieren weiß nicht ob es gut ist oder nicht
 		[
@@ -373,12 +374,12 @@ class Main {
 			[13,18,18,18,10,18,18,18,2,18,18,18,10,18,18,18,13,18,18,18],
 		],
 //42
-		//bombe, kopier, reaktivator
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_2y7:kugel_5R2hau3haR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
-			[7,19,7,18,19,7,19,18,7,19,7,18,19,7,19,18,7,19,7,18],
-		],
+		// //bombe, kopier, reaktivator
+		// [
+		// 	"v1",
+		// 	"cy4:Ziely4:zielaay7:kugel_2y7:kugel_5R2hau3haR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
+		// 	[7,19,7,18,19,7,19,18,7,19,7,18,19,7,19,18,7,19,7,18],
+		// ],
 //43
 		//snake + dropper + hdeleter : don't know if it's hard or not (probably. feels a bit claustraphobic)
 		[
@@ -424,11 +425,11 @@ class Main {
 		],
 
 //49
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_6y7:kugel_3R3R3haR3y7:kugel_5R4R3haR3R4y7:kugel_2R4haR4R5y7:kugel_1R5haR4R5R5y7:kugel_4hhy9:werkzeugeatttttttttttttttttttthg",
-			[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-		],
+		// [
+		// 	"v1",
+		// 	"cy4:Ziely4:zielaay7:kugel_6y7:kugel_3R3R3haR3y7:kugel_5R4R3haR3R4y7:kugel_2R4haR4R5y7:kugel_1R5haR4R5R5y7:kugel_4hhy9:werkzeugeatttttttttttttttttttthg",
+		// 	[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+		// ],
 //50
 		//hairy hdeleter - maybe ok? work backwards to solve everything
 		[
@@ -1950,14 +1951,15 @@ function regenAllText(){
     }
 
 	function init(){
+		Save.filename = "gestaltos_31";
 		tongue = new FireTongue();
 		// Text.font = "dos";
 		// Sound.play("t2");
 		//Music.play("music",0,true);
-		Gfx.resizescreen(198, 220,true);//true->false for  non-pixel-perfect-scaling
+		Gfx.resizescreen(192, 220,true);//true->false for  non-pixel-perfect-scaling
 		
 		
-		Gfx.createimage("fg", 198, 220);
+		Gfx.createimage("fg", 192, 220);
 		// Gfx.clearcolor=Col.RED;// desktop_farbe;
 		// Gfx.loadtiles("dice_highlighted",16,16);
 		setup();
@@ -2213,7 +2215,23 @@ function tueRedo(){
 	}
 
 	function update() {	
-
+		if(editmodus){
+			if (Input.justpressed(Key.G)){
+				geloest[aktuellesZielIdx]=ziele[aktuellesZielIdx][0];
+				Save.savevalue("level"+aktuellesZielIdx,ziele[aktuellesZielIdx][0]);
+				forcerender=true;
+				var won=true;
+				for (i in 0...ziele.length){
+					if (geloest[i]!=ziele[aktuellesZielIdx][0]){
+						won=false;
+						break;
+					}
+				}			
+				if (won){
+					zeigende=true;
+				}
+			}
+		}
 		if (zeigitemmenu){
 			var inputs = [
 				Key.ONE,
@@ -2253,7 +2271,7 @@ function tueRedo(){
 		}
 
 		zeigabout=false;
-		zeigende=false;
+		// zeigende=false;
 		
 		if(forceregentext){
 			regenAllText();
@@ -2396,17 +2414,20 @@ function tueRedo(){
 
 
 		if (zeigende){
-			Text.wordwrap=185;
+			Text.wordwrap=116;
 
-			Gfx.drawimage(0,0,"endscreen");
+			Gfx.drawimage(0,0,"31/ende");
 			
-			Text.display(103,52+text_y_off_menu,dict["$CONGRATS"],farbe_menutext);
+			
+			var tw = Text.width(dict["$CONGRATS"]);
+			Text.display(Gfx.screenwidth/2-tw/2,48,dict["$CONGRATS"],0xffffff);
 
-			Text.display(103,73,dict["$CONGRATS_SENTENCE"]
-				,0x20116d);
+			var s =dict["$CONGRATS_SENTENCE"]+"\n\n"+dict["$WE_ARE_HAPPY"];
+			Text.display(37,62,s
+				,0x000000);
 
 			
-			Text.display(103,105,dict["$WE_ARE_HAPPY"],0x20116d);
+			// Text.display(103,105,dict["$WE_ARE_HAPPY"],0x20116d);
 				
 			Text.wordwrap=0;			
 			Text.font=dict_internal["$FONT_BIG"];
@@ -2418,11 +2439,11 @@ function tueRedo(){
 			if (
 				IMGUI.presstextbutton(
 					"ueber_ok",
-					"btn_solve_bg_up",
-					"btn_solve_bg_down",
+					"31/button_med",
+					"31/button_med_down",
 					dict["$BUTTON_OK"],
 					Col.BLACK,
-					236,149
+					80,125
 					))
 			{
 				zeigende=false;
@@ -2469,7 +2490,7 @@ function tueRedo(){
 		
 		Gfx.drawimage(0,0,"31/bg");
 
-		var ziele_zeilen=4;
+		var ziele_zeilen=3;
 		var zeile_lange = Math.ceil(ziele.length/ziele_zeilen);
 		
 		var step = Math.floor(117/zeile_lange);
@@ -2481,7 +2502,7 @@ function tueRedo(){
 			var gy = Math.floor(i/zeile_lange);
 			var gw=117;
 
-			var px = 74 + step*gx;
+			var px = 75 + step*gx;
 			var py = 22+stepy*gy;
 			
 			if (editmodus && Mouse.leftclick()){
@@ -2491,10 +2512,10 @@ function tueRedo(){
 			}
 
 			if (geloest[i]==ziele[i][0]){
-				// Gfx.drawimage(px+1,py+1,"31/geloest");	
-				Gfx.fillbox(px,py,step-1,winbox_height,0x008282);	
+				Gfx.drawimage(px,py,"31/geloest");	
+				// Gfx.fillbox(px,py,step-1,winbox_height,0x008282);	
 			}  else {
-				Gfx.fillbox(px,py,step-1,winbox_height,0x000000);
+				Gfx.drawbox(px,py,step-1,winbox_height,0x000000);
 			}
 
 			if (i==aktuellesZielIdx){
@@ -2510,7 +2531,7 @@ function tueRedo(){
 		for (j in 0...i_zeilen){
 			for (i in 0...i_spalten){
 
-				var ix = 27+17*i;
+				var ix = 24+17*i;
 				var iy = 158+17*j;
 				
 
@@ -2561,7 +2582,7 @@ function tueRedo(){
 					"31/button_sm",
 					"31/button_sm_down",
 					"31/btn_neu",
-					8,22,
+					9,22,
 				dict["$TOOLTIP_CLEAR_PAGE"]
 				)  
 				|| Input.justpressed(Key.N)
@@ -2578,7 +2599,7 @@ function tueRedo(){
 					"31/button_sm",
 					"31/button_sm_down",
 					"31/btn_ruckgaengig",
-					29,22,
+					30,22,
 					dict["$TOOLTIP_UNDO"]
 					)
 					|| Input.delaypressed(Key.Z,keyrepeat)
@@ -2588,7 +2609,7 @@ function tueRedo(){
 					tueUndo();
 			}
 		} else {
-			Gfx.drawimage(29,22,"31/kein_undos_mehr");
+			Gfx.drawimage(30,22,"31/kein_undos_mehr");
 		}
 
 
@@ -2599,7 +2620,7 @@ function tueRedo(){
 					"31/button_sm",
 					"31/button_sm_down",
 					"31/btn_wiederholen",
-					50,22,
+					51,22,
 					dict["$TOOLTIP_REDO"]
 					)
 					|| Input.delaypressed(Key.Y,keyrepeat)
@@ -2610,7 +2631,7 @@ function tueRedo(){
 					tueRedo();
 			}
 		} else {
-			Gfx.drawimage(50,22,"31/kein_redoes_mehr");
+			Gfx.drawimage(51,22,"31/kein_redoes_mehr");
 		}
 
 		var changelang = IMGUI.pressbutton(
@@ -2657,7 +2678,7 @@ function tueRedo(){
 		Text.display(Gfx.screenwidth/2-tw/2,8+text_y_off_menu,dict["$GESTALT_31"],farbe_menutext);
 
 		var w= Text.width(dict["$TABLEAU"]);
-		Text.display(52-w/2,57+text_y_off_menu,dict["$TABLEAU"],farbe_menutext);
+		Text.display(49-w/2,57+text_y_off_menu,dict["$TABLEAU"],farbe_menutext);
 
 
 		var lebende = Lambda.count(Globals.state.solved, (w)->w==0);
@@ -2665,18 +2686,18 @@ function tueRedo(){
 		// Text.display(91,8+text_y_off_menu,titeltext,farbe_menutext);
 
 		var gw = Text.width(goal_x_of_y_str);
-		Text.display(140-gw/2,51+text_y_off_menu,
+		Text.display(138-gw/2,52+text_y_off_menu,
 			goal_x_of_y_str,
 			farbe_menutext);
 
 		if (aktuellesZielIdx>0){
-			if(IMGUI.pressbutton("menü_l","31/button_med","31/button_med_down","31/btn_pfeil_links",106,158)||Input.delaypressed(Key.LEFT,keyrepeat)){
+			if(IMGUI.pressbutton("menü_l","31/button_med","31/button_med_down","31/btn_pfeil_links",103,158)||Input.delaypressed(Key.LEFT,keyrepeat)){
 				LoadLevel(aktuellesZielIdx-1);
 			}
 		} else {
-			Gfx.drawimage(106,158,"31/button_med");
-			Gfx.drawimage(106,158,"31/btn_pfeil_links");
-			Gfx.drawimage(106,158,"31/button_med_deaktiviert");
+			Gfx.drawimage(103,158,"31/button_med");
+			Gfx.drawimage(103,158,"31/btn_pfeil_links");
+			Gfx.drawimage(103,158,"31/button_med_deaktiviert");
 		}
 
 
@@ -2688,7 +2709,7 @@ function tueRedo(){
 						dict["$SOLVED"],
 						"31/button_big_transparent",
 						Col.BLACK,
-						106,183
+						103,183
 						);
 		} else if (cansolve){
 			if(IMGUI.presstextbutton(
@@ -2696,11 +2717,18 @@ function tueRedo(){
 						"31/button_big",
 						"31/button_big_down",
 						dict["$SOLVE"],
-						Col.BLACK,106,183)){
+						Col.BLACK,103,183)){
 				geloest[aktuellesZielIdx]=ziele[aktuellesZielIdx][0];
 				Save.savevalue("level"+aktuellesZielIdx,ziele[aktuellesZielIdx][0]);
 				forcerender=true;
-				if (aktuellesZielIdx==49){
+				var won=true;
+				for (i in 0...ziele.length){
+					if (geloest[i]!=ziele[aktuellesZielIdx][0]){
+						won=false;
+						break;
+					}
+				}			
+				if (won){
 					zeigende=true;
 				}
 			}
@@ -2712,24 +2740,24 @@ function tueRedo(){
 						dict["$SOLVE"],
 						"31/button_big_deaktiviert",
 						Col.BLACK,
-						106,183
+						103,183
 						);
 		}
 		
 		if (aktuellesZielIdx+1<ziele.length){
-			if(IMGUI.pressbutton("menü_r","31/button_med","31/button_med_down","31/btn_pfeil_rechts",143,158)||Input.delaypressed(Key.RIGHT,keyrepeat)){
+			if(IMGUI.pressbutton("menü_r","31/button_med","31/button_med_down","31/btn_pfeil_rechts",140,158)||Input.delaypressed(Key.RIGHT,keyrepeat)){
 				LoadLevel(aktuellesZielIdx+1);
 			}
 		} else {
-			Gfx.drawimage(143,158,"31/button_med");
-			Gfx.drawimage(143,158,"31/btn_pfeil_rechts");
-			Gfx.drawimage(143,158,"31/button_med_deaktiviert");
+			Gfx.drawimage(140,158,"31/button_med");
+			Gfx.drawimage(140,158,"31/btn_pfeil_rechts");
+			Gfx.drawimage(140,158,"31/button_med_deaktiviert");
 		}
 
 		// Gfx.drawimage(Mouse.x-3,Mouse.y-3,"cursor_finger");
 
 
-		var zielb_x=102;
+		var zielb_x=99;
 		var zielb_y=65;
 
 		var zielb_w=77;
@@ -2795,13 +2823,13 @@ function tueRedo(){
 					}
 				}				
 				if (inhalt!=null){
-					Gfx.drawimage(19+17*i,70+17*j,"31/bg_"+z_names[i+sp_spalten*j]);
-					Gfx.drawimage(19+17*i,70+17*j,"31/"+inhalt);
+					Gfx.drawimage(16+17*i,70+17*j,"31/bg_"+z_names[i+sp_spalten*j]);
+					Gfx.drawimage(16+17*i,70+17*j,"31/"+inhalt);
 				} else {
-					Gfx.drawimage(19+17*i,70+17*j,"31/ol_"+z_names[i+sp_spalten*j]);
+					Gfx.drawimage(16+17*i,70+17*j,"31/ol_"+z_names[i+sp_spalten*j]);
 				}
 				if (abw==frame){
-					Gfx.drawimage(19+17*i,70+17*j,"cursor_aktiv");
+					Gfx.drawimage(16+17*i,70+17*j,"cursor_aktiv");
 				}
 			}
 		}
@@ -2826,7 +2854,7 @@ function tueRedo(){
 				var mx=Mouse.x;
 				var my=Mouse.y;
 
-				var ox = mx-19;
+				var ox = mx-16;
 				var oy = my-70;
 				var ox_d = ox % 17;
 				var oy_d = oy % 17;
@@ -2885,7 +2913,7 @@ function tueRedo(){
 				var b_h=editor_br_y-editor_tl_y;
 				b_w = b_w*17+1;
 				b_h = b_h*17+1;
-				Gfx.drawbox(18+editor_tl_x*17,69+editor_tl_y*17,b_w,b_h,Col.RED);
+				Gfx.drawbox(15+editor_tl_x*17,69+editor_tl_y*17,b_w,b_h,Col.RED);
 			}
 		}
 		
@@ -2898,7 +2926,7 @@ function tueRedo(){
 			var mx=Mouse.x;
 			var my=Mouse.y;
 
-			var ox = mx-19;
+			var ox = mx-16;
 			var oy = my-70;
 			var ox_d = ox % 17;
 			var oy_d = oy % 17;
@@ -2930,7 +2958,7 @@ function tueRedo(){
 			
 			if (geltendes_hoverziel){
 				if (szs_brett[hoverziel_y][hoverziel_x]==null){
-					Gfx.drawimage(19+17*hoverziel_x,70+17*hoverziel_y,"31/highlightcursor");
+					Gfx.drawimage(16+17*hoverziel_x,70+17*hoverziel_y,"31/highlightcursor");
 				} else {
 					geltendes_hoverziel=false;
 					nope=true;
@@ -2974,7 +3002,7 @@ function tueRedo(){
 				Text.display(x+1,y,chars[i-1],Col.WHITE);
 
 			}	
-			Gfx.drawimage(19+17*itemmenu_ziel_x,70+17*itemmenu_ziel_y,"31/highlightcursor");
+			Gfx.drawimage(16+17*itemmenu_ziel_x,70+17*itemmenu_ziel_y,"31/highlightcursor");
 		}
 
 		if (zeigabout||zeigende){

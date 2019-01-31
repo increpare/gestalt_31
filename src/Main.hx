@@ -54,7 +54,7 @@ class Main {
 	var itemmenu_ziel_y:Int=-1;
 
 	var enableEditor:Bool=true;
-	var zeigBetaNotice:Bool=false;
+	var zeigBetaNotice:Bool=true;
 
 	public var letztes_hoverziel_x:Int=-1;
 	public var letztes_hoverziel_y:Int=-1;
@@ -72,30 +72,118 @@ class Main {
 	public var aktuellesZiel:Ziel;	
 	public var aktuellesZielIdx=0;
 	public var ziele:Array<Array<Dynamic>> = [
-		//++
+//1
+		//verkehrsampel - vsplitter und sauger - ziemlich einfach  aber ich mag es
 		[
 			"v1",
-			"cy4:Ziely4:zielaany7:kugel_2nhay7:kugel_4y7:kugel_1R3hanR2nhaR3R4R3hanR2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3],
 		],
+//2
+		//verkehrsampel - einfach aber nicht schlect?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,13,8,13,13,8,13,8,8,13,8,13,13,8,13,8,8,13,8,13],
+		],
+//3
+		//verkehrsampel - spiegeln - zu einfach?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15],
+		],
+//4
+		//verkerhsampel mit horizontal/vertical umkehren
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[16,16,16,16,17,17,17,17,16,16,16,16,17,17,17,17,16,16,16,16],
+		],
+//5
+		//verkehrsampel - bomben - nicht schlecht!
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[13,13,13,13,13,19,19,19,13,19,19,19,13,19,19,19,13,19,19,19],
+		],
+//6
+
+		//verkehrsampel - drehen - zu einfach? ok für level1?
+		[
+			"v1",
+			"cy4:Ziely4:zielaau3hany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[14,13,14,13,13,14,13,14,14,13,14,13,13,14,13,14,14,13,14,13],
+		],
+//7
+		//haut+füllung verkehrsampel
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[2,2,2,2,6,6,6,6,6,6,6,6,6,6,6,6,2,2,2,2],
+		],
+
+//8
+//haut+vertikallöscher verkehrsampel
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[2,3,2,3,3,2,3,2,2,3,2,3,3,2,3,2,2,3,2,3],
+		],
+
+//9
+//verkehrsampel - kopier + vspliter (habe schon etw ähnlich?)
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[3,7,3,3,7,3,7,3,3,7,3,7,7,3,7,3,3,7,3,7],
+		],
+//10
+		//verkehrsampel - v deleter and diagonal spiegel - nicht so gut / sehr einfach. aber nicht schlect?
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[15,3,15,3,3,15,3,15,15,3,15,3,3,15,3,15,15,3,15,3],
+		],
+
+//11
+		//verkehrsampel, haut + sauger
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_4y7:kugel_2haR2R3R4hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,2,2,2,8,2,2,2,8,2,2,2,8,2,2,2,8,2,2,2],
+		],
+
+//12
+		//verkehrsampel - avocado - tatsächlich nicht so schwierig
+		[
+			"v1",
+			"cy4:Ziely4:zielaay6:halm_1hay6:halm_4hay6:halm_2hhy9:werkzeugeatttttttttttttttttttthg",
+			[13,13,13,13,13,20,20,20,13,20,20,20,13,20,20,20,13,20,20,20],
+		],
+		
+//13
 		//vier wurzeln - zu einfach
 		[
 			"v1",
 			"cy4:Ziely4:zielaay6:halm_2haR2haR2haR2hhy9:werkzeugeatttttttttttttttttttthg",		
 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
+//14
 		//wechselwurzeln
 		["v1",
 			"cy4:Ziely4:zielaay7:kugel_2nR2hanR2nhaR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
 
+//15
 		// großes X
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_2nR2hany7:kugel_4nhaR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
+//16
 		//schwierig >>
 		[
 			"v1",
@@ -103,6 +191,7 @@ class Main {
 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 			
 		],
+//17
 		//oo
 		//#o
 		//#o
@@ -111,209 +200,241 @@ class Main {
 			"cy4:Ziely4:zielaau3hay7:kugel_6R2nhaR2R2nhaR2R2nhhy9:werkzeugeatttttttttttttttttttthg",
 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
+//18
 		//metroidvania
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_6R2R2hay7:kugel_1R3R3hau2R3haR3R3R3haR2R2R2hhy9:werkzeugeatttttttttttttttttttthg",	
 			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]				
 		],
+//19
 		//trivial custom back
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_6ny7:kugel_5hau3hay7:kugel_2ny7:kugel_4hhy9:werkzeugeatttttttttttttttttttthg",
 			[13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13],
 		],
-		//custom less trivial but still not great
+
+
+//20
+		//++
 		[
 			"v1",
-			"cy4:Ziely4:zielaau2hay7:kugel_4y7:kugel_2hay7:kugel_5y7:kugel_6hau2hhy9:werkzeugeatttttttttttttttttttthg",
-			[3,4,3,4,4,7,4,7,3,4,3,4,4,3,4,3,3,7,3,7],
+			"cy4:Ziely4:zielaany7:kugel_2nhay7:kugel_4y7:kugel_1R3hanR2nhaR3R4R3hanR2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[5,10,6,9,11,7,14,4,17,1,19,16,2,15,13,3,12,20,8,18]
 		],
-		//langweilig
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_2u2hay7:kugel_1y7:kugel_5nhaR2y7:kugel_4y7:kugel_3haR3R4nhaR2u2hhy9:werkzeugeatttttttttttttttttttthg",
-			[16,17,16,17,17,16,17,16,16,17,16,17,17,16,17,16,16,17,17,16],
-		],		
-		//schlangerätsel
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_2R2R2hay7:kugel_4R3R3hay7:kugel_1R4R4hay7:kugel_3R5R5hhy9:werkzeugeatttttttttttttttttttthg",
-			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
-		],	
-		//schalnge2 - ok? oder night?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_4y7:kugel_5y7:kugel_2y7:kugel_1hhy9:werkzeugeatttttttttttttttttttthg",
-			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
-		],
-		//schlange 3 - nicht schlecht!
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_2hay7:kugel_1hay7:kugel_4hay7:kugel_3hay7:kugel_5hhy9:werkzeugeatttttttttttttttttttthg",
-			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
-		],
-		//hat 1 - zu einfach?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1R2R2hay7:kugel_5R3R2hay7:kugel_2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
-			[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-		],
-		//copier + reaktivator - ok?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_5R2hay7:kugel_2y7:kugel_4R4haR2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
-			[7,7,7,18,7,7,7,18,7,7,7,18,7,7,7,18,7,7,7,18],
-		],
-		//sehr einfach, aber vllt ok?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_5hany7:kugel_4nhay7:kugel_2ny7:kugel_6hhy9:werkzeugeatttttttttttttttttttthg",
-			[8,13,8,13,13,8,13,8,8,13,8,13,13,8,13,8,8,13,8,13],
-		],
-		//verkehrsampel - einfach aber nicht schlect?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[8,13,8,13,13,8,13,8,8,13,8,13,13,8,13,8,8,13,8,13],
-		],
-		//verkehrsampel - drehen - zu einfach? ok für level1?
-		[
-			"v1",
-			"cy4:Ziely4:zielaau3hany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[14,13,14,13,13,14,13,14,14,13,14,13,13,14,13,14,14,13,14,13],
-		],
-		//verkehrsampel - spiegeln - zu einfach?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15],
-		],
-		//verkerhsampel mit horizontal/vertical umkehren
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[16,16,16,16,17,17,17,17,16,16,16,16,17,17,17,17,16,16,16,16],
-		],
-		//verkehrsampel - bomben - nicht schlecht!
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[13,13,13,13,13,19,19,19,13,19,19,19,13,19,19,19,13,19,19,19],
-		],
-		//verkehrsampel - avocado - tatsächlich nicht so schwierig
-		[
-			"v1",
-			"cy4:Ziely4:zielaay6:halm_1hay6:halm_4hay6:halm_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[13,13,13,13,13,20,20,20,13,20,20,20,13,20,20,20,13,20,20,20],
-		],
-		//haut + globaler löscher
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_4y7:kugel_5haR3R2haR2R3hhy9:werkzeugeatttttttttttttttttttthg",
-			[1,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2],
-		],
-		//füllugpuzzle, nicht so schwierig?
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1R2haR2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[1,1,1,1,6,1,6,1,1,1,1,1,6,1,6,1,1,1,1,1],
-		],
-		//kopie/globaler löscher - ich finde dieses puzzle ganz ok
-		[
-			"v1",
-			"cy4:Ziely4:zielaau3hay7:kugel_1nR2hau3hhy9:werkzeugeatttttttttttttttttttthg",
-			[7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1],
-		],
-		//globaler löscher + schlange, einfacher version
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_3haR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
-			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
-		],
-		//globaler löscher + schlange, schwierige version
-		[
-			"v1",
-			"cy4:Ziely4:zielaany7:kugel_1ny7:kugel_3hanR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
-			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
-		],
-		//wachsen+globaler löscher - ok?
-		[
-			"v1",
-			"cy4:Ziely4:zielaau3hay6:halm_2y6:halm_4y6:halm_1hay7:kugel_2y7:kugel_4y7:kugel_1hhy9:werkzeugeatttttttttttttttttttthg",
-			[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,20,20,20,20],
-		],
-		//haut+vertikallöscher verkehrsampel
-		[
-			"v1",
-			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[2,3,2,3,3,2,3,2,2,3,2,3,3,2,3,2,2,3,2,3],
-		],
-		//haut+füllung verkehrsampel
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[2,2,2,2,6,6,6,6,6,6,6,6,6,6,6,6,2,2,2,2],
-		],
+
+//21
 		//verkehrsampel, kopier + haut - nicht so gut?
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_1R2hay7:kugel_4R3hay7:kugel_2R4hhy9:werkzeugeatttttttttttttttttttthg",
 			[7,2,7,2,2,7,2,7,7,2,7,2,2,7,2,7,7,2,7,2],
 		],
-		//verkehrsampel, haut + sauger
+//22
+		//custom less trivial but still not great
 		[
 			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_4y7:kugel_2haR2R3R4hhy9:werkzeugeatttttttttttttttttttthg",
-			[8,2,2,2,8,2,2,2,8,2,2,2,8,2,2,2,8,2,2,2],
+			"cy4:Ziely4:zielaau2hay7:kugel_4y7:kugel_2hay7:kugel_5y7:kugel_6hau2hhy9:werkzeugeatttttttttttttttttttthg",
+			[3,4,3,4,4,7,4,7,3,4,3,4,4,3,4,3,3,7,3,7],
 		],
+//23
+		//langweilig
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_2u2hay7:kugel_1y7:kugel_5nhaR2y7:kugel_4y7:kugel_3haR3R4nhaR2u2hhy9:werkzeugeatttttttttttttttttttthg",
+			[16,17,16,17,17,16,17,16,16,17,16,17,17,16,17,16,16,17,17,16],
+		],	
+//24	
+		//schlangerätsel
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_2R2R2hay7:kugel_4R3R3hay7:kugel_1R4R4hay7:kugel_3R5R5hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
+		],
+//25	
+		//schalnge2 - ok? oder night?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_4y7:kugel_5y7:kugel_2y7:kugel_1hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
+		],
+//26
+		//schlange 3 - nicht schlecht!
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_2hay7:kugel_1hay7:kugel_4hay7:kugel_3hay7:kugel_5hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],
+		],
+//27
+		//hat 1 - zu einfach?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1R2R2hay7:kugel_5R3R2hay7:kugel_2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
+			[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+		],
+//28
+		//copier + reaktivator - ok?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_5R2hay7:kugel_2y7:kugel_4R4haR2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
+			[7,7,7,18,7,7,7,18,7,7,7,18,7,7,7,18,7,7,7,18],
+		],
+//29
+		//sehr einfach, aber vllt ok?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_5hany7:kugel_4nhay7:kugel_2ny7:kugel_6hhy9:werkzeugeatttttttttttttttttttthg",
+			[8,13,8,13,13,8,13,8,8,13,8,13,13,8,13,8,8,13,8,13],
+		],
+//30
+		//haut + globaler löscher
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_4y7:kugel_5haR3R2haR2R3hhy9:werkzeugeatttttttttttttttttttthg",
+			[1,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2,1,2,2,2],
+		],
+//31
+		//füllugpuzzle, nicht so schwierig?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1R2haR2nhhy9:werkzeugeatttttttttttttttttttthg",
+			[1,1,1,1,6,1,6,1,1,1,1,1,6,1,6,1,1,1,1,1],
+		],
+//32
+		//kopie/globaler löscher - ich finde dieses puzzle ganz ok
+		[
+			"v1",
+			"cy4:Ziely4:zielaau3hay7:kugel_1nR2hau3hhy9:werkzeugeatttttttttttttttttttthg",
+			[7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1],
+		],
+//33
+		//globaler löscher + schlange, einfacher version
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_1ny7:kugel_3haR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
+		],
+//34
+		//globaler löscher + schlange, schwierige version
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_1ny7:kugel_3hanR2nR3hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,1,1,12,1,12,12,1,1,12,12,1,1,12,12,1,12,1,1,12],
+		],
+//35
+		//wachsen+globaler löscher - ok?
+		[
+			"v1",
+			"cy4:Ziely4:zielaau3hay6:halm_2y6:halm_4y6:halm_1hay7:kugel_2y7:kugel_4y7:kugel_1hhy9:werkzeugeatttttttttttttttttttthg",
+			[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,20,20,20,20],
+		],	
+//36	
 		//bombe+haut - ok?
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_5R2R2hay7:kugel_6R3R3hhy9:werkzeugeatttttttttttttttttttthg",
 			[19,2,19,2,2,19,2,19,19,2,19,2,2,19,2,19,19,2,19,2],
 		],
+//37
 		//vsplitter+füller - ok ziemlich einfach?
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_3y7:kugel_4haR2R3haR2R3hhy9:werkzeugeatttttttttttttttttttthg",
 			[3,6,3,6,6,3,6,3,3,6,3,6,6,3,6,3,3,6,3,6],
 		],
-		//verkehrsampel - kopier + vspliter (habe schon etw ähnlich?)
-		[
-			"v1",
-			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[3,7,3,3,7,3,7,3,3,7,3,7,7,3,7,3,3,7,3,7],
-		],
-		//verkehrsampel - vsplitter und sauger - ziemlich einfach  aber ich mag es
-		[
-			"v1",
-			"cy4:Ziely4:zielaay7:kugel_1hay7:kugel_4hay7:kugel_2hhy9:werkzeugeatttttttttttttttttttthg",
-			[8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3,8,3,3,3],
-		],
+		
+//38
 		//snake + hsplitter.  must be aware situationally but not crazy hard
 [
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_1y7:kugel_4R2hanR3nhaR2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
 			[4,12,4,12,12,3,12,3,4,12,4,12,12,3,12,3,4,12,4,12],
 		],
-		//verkehrsampel - v deleter and diagonal spiegel - nicht so gut / sehr einfach. aber nicht schlect?
-		[
-			"v1",
-			"cy4:Ziely4:zielaany7:kugel_1nhany7:kugel_4nhany7:kugel_2nhhy9:werkzeugeatttttttttttttttttttthg",
-			[15,3,15,3,3,15,3,15,15,3,15,3,3,15,3,15,15,3,15,3],
-		],
+//39
 		//grower + hsplitter - pretty easy
 		[
 			"v1",
 			"cy4:Ziely4:zielaau2hay6:halm_2y6:halm_1hau2hhy9:werkzeugeatttttttttttttttttttthg",
 			[20,4,20,4,4,20,4,20,20,4,20,4,4,20,4,20,20,4,20,4],
 		],
+//40
 		//schlage+fußgänger - weiß nicht ob es gut ist oder nicht...zu einfach..
 		[
 			"v1",
 			"cy4:Ziely4:zielaay7:kugel_4R2R2haR2y7:kugel_2R2haR2R2R2hhy9:werkzeugeatttttttttttttttttttthg",
 			[5,5,5,5,5,5,5,5,12,12,12,12,13,13,13,13,13,13,13,13],
+		],
+//41
+		//complex - 4 gegenständer mit reaktivieren weiß nicht ob es gut ist oder nicht
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_6y7:kugel_2R2haR2y7:kugel_1R3haR2R3R2hhy9:werkzeugeatttttttttttttttttttthg",
+			[13,18,18,18,10,18,18,18,2,18,18,18,10,18,18,18,13,18,18,18],
+		],
+//42
+		//bombe, kopier, reaktivator
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_2y7:kugel_5R2hau3haR2nR2hhy9:werkzeugeatttttttttttttttttttthg",
+			[7,19,7,18,19,7,19,18,7,19,7,18,19,7,19,18,7,19,7,18],
+		],
+//43
+		//snake + dropper + hdeleter : don't know if it's hard or not (probably. feels a bit claustraphobic)
+		[
+			"v1",
+			"cy4:Ziely4:zielaany7:kugel_2nhay7:kugel_4nR2hanR3nhhy9:werkzeugeatttttttttttttttttttthg",
+			[4,12,9,12,4,9,12,9,4,12,9,12,4,9,12,9,4,12,9,12],
+		],
+//44
+		//snake + rotator : not so hard, but engaging maybe?
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_4R2R2R2haR2R2R2R2hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,14,14,14,12,14,14,14,12,14,14,14,12,14,14,14,12,14,14,14],
+		],
+//45
+		//blaa boring and bad
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_4R2hay7:kugel_2R3haR3R3hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,9,9,12,12,9,9,12,12,9,9,12,12,9,9,12,12,9,9,12],
+		],
+//46
+		//weiß nicht flip mirrorer und dreher
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_2haR2haR2hhy9:werkzeugeatttttttttttttttttttthg",
+			[17,14,16,14,14,17,14,16,17,14,16,14,14,17,14,16,17,14,16,14
+			],
+		],
+//47
+		//schlang + kopier - nicht sicher genau wie schwierig
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_5R2haR2y7:kugel_4haR3R3hhy9:werkzeugeatttttttttttttttttttthg",
+			[12,12,18,18,12,12,18,18,12,12,18,18,12,12,18,18,12,12,18,18],
+		],
+//48
+		//muss alles behauten - actually pretty easy
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_4R2y7:kugel_3y7:kugel_6haR3R3y7:kugel_5R3haR3R5y7:kugel_2R5haR5R6y7:kugel_1R6haR5R5R6R6hhy9:werkzeugeatttttttttttttttttttthg",
+			[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+		],
+
+//49
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_6y7:kugel_3R3R3haR3y7:kugel_5R4R3haR3R4y7:kugel_2R4haR4R5y7:kugel_1R5haR4R5R5y7:kugel_4hhy9:werkzeugeatttttttttttttttttttthg",
+			[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+		],
+//50
+		//hairy hdeleter - maybe ok? work backwards to solve everything
+		[
+			"v1",
+			"cy4:Ziely4:zielaay7:kugel_5R2hay7:kugel_1R3hay7:kugel_3R4haR2R2hay7:kugel_6R5hhy9:werkzeugeatttttttttttttttttttthg",
+			[2,4,2,4,4,2,4,2,2,4,2,4,4,2,4,2,2,4,2,4],
 		],
 	];
 
@@ -379,36 +500,37 @@ class Main {
 			return;
 		}
 
-		if (aktuellesZielIdx==48){
-			cansolve=true;
+		// if (aktuellesZielIdx==48){
+		// 	cansolve=true;
 
-			for (j in 0...sp_zeilen){
-				for (i in 0...sp_spalten){
-					if (szs_brett[j][i]!=null){
-						cansolve=false;
-						return;
-					}
-				}
-			}
+		// 	for (j in 0...sp_zeilen){
+		// 		for (i in 0...sp_spalten){
+		// 			if (szs_brett[j][i]!=null){
+		// 				cansolve=false;
+		// 				return;
+		// 			}
+		// 		}
+		// 	}
 
-			for (j in 0...i_zeilen){
-				for (i in 0...i_spalten){
-					if (szs_inventory[j][i]!=null){
-						cansolve=false;
-						return;
-					}
-				}
-			}
+		// 	for (j in 0...i_zeilen){
+		// 		for (i in 0...i_spalten){
+		// 			if (szs_inventory[j][i]!=null){
+		// 				cansolve=false;
+		// 				return;
+		// 			}
+		// 		}
+		// 	}
 					
-		} else if (aktuellesZielIdx==49){
-			cansolve=true;
-			for (i in 0...(ziele.length-1)){
-				if (geloest[i]!=ziele[i][0]){
-					cansolve=false;
-					return;
-				}
-			}
-		} else {
+		// } else if (aktuellesZielIdx==49){
+		// 	cansolve=true;
+		// 	for (i in 0...(ziele.length-1)){
+		// 		if (geloest[i]!=ziele[i][0]){
+		// 			cansolve=false;
+		// 			return;
+		// 		}
+		// 	}
+		// } else 
+		{
 			var z =  aktuellesZiel.ziel;
 			var zw = aktuellesZiel.ziel[0].length;
 			var zh = aktuellesZiel.ziel.length;
@@ -1509,7 +1631,6 @@ class Main {
 	}
 
 	function versuchfallenzulassen(x:Int,y:Int){
-		var erlauben=false;
 
 		var z_names:Array<Int> = ziele[aktuellesZielIdx][2];
 
@@ -1529,56 +1650,64 @@ class Main {
 		animation.maxabweichung=0;
 		animation2.maxabweichung=0;
 		var etwgemacht=false;
-		for (i in 0...sp_spalten){
-			for (j in 0...sp_zeilen){
-					
-				if (x==i&&y==j){
-					continue;
-				}
-				
-				if (animationen.length>0){
-					if (animationen[0].vor_brett[j][i]==null){
+		var anderung=true;
+		while(anderung){
+			anderung=false;
+			for (i in 0...sp_spalten){
+				for (j in 0...sp_zeilen){
+						
+					var erlauben=false;
+
+					if (x==i&&y==j){
 						continue;
 					}
+					
+					if (animationen.length>0){
+						if (animationen[0].vor_brett[j][i]==null){
+							continue;
+						}
+					}
+
+					var bgname = z_names[i+sp_spalten*j];
+					if (bgname!=9){
+						continue;
+					}
+
+					if (animation2.nach_brett[j][i]!=null && ( (j==sp_zeilen-1) ||animation2.nach_brett[j+1][i]==null) ){
+						erlauben=true;
+					}
+
+					if (!erlauben){
+						continue;
+					}
+
+					{
+						// var j = sp_zeilen-1;
+						// while(j>=0){
+							// for (i in 0...sp_spalten){
+								
+
+									etwgemacht=true;
+									if (j<(sp_zeilen-1) ){
+										animation2.nach_brett[j+1][i]=animation2.nach_brett[j][i];
+										animation2.abweichung[j+1][i]=0;
+									}
+									animation2.nach_brett[j][i]=null;
+									animation.abweichung[j][i]=0;
+									anderung=true;
+							// }
+							// j--;
+						// }	
+					}
+
 				}
-
-				var bgname = z_names[i+sp_spalten*j];
-				if (bgname!=9){
-					continue;
-				}
-
-				if (szs_brett[j][i]!=null && ( (j==sp_zeilen-1) ||szs_brett[j+1][i]==null) ){
-					erlauben=true;
-				}
-
-				if (!erlauben){
-					continue;
-				}
-
-				{
-					// var j = sp_zeilen-1;
-					// while(j>=0){
-						// for (i in 0...sp_spalten){
-							
-
-								etwgemacht=true;
-								if (j<(sp_zeilen-1) ){
-									animation2.nach_brett[j+1][i]=animation2.nach_brett[j][i];
-									animation2.abweichung[j+1][i]=0;
-								}
-								animation2.nach_brett[j][i]=null;
-								animation.abweichung[j][i]=0;
-						// }
-						// j--;
-					// }	
-				}
-
 			}
 		}
 
 		if (etwgemacht){
 			animationen.push(animation);
 			animationen.push(animation2);
+			szs_brett = Copy.copy(animation2.nach_brett);
 		}
 
 	}
@@ -1658,6 +1787,7 @@ class Main {
 		if (modified){
 
 			animationen.push(animation);
+			szs_brett = Copy.copy(animation.nach_brett);
 		}
 	}
 
@@ -1966,6 +2096,7 @@ function regenAllText(){
 
 function tueRedo(){
 	
+		trace("A");
 		if(zieh_modus){
 				zieh_modus=false;
 				szs_inventory[zieh_quelle_j][zieh_quelle_i]=zieh_name;
@@ -1973,9 +2104,13 @@ function tueRedo(){
 		
 		animationen.splice(0,animationen.length);	
 		animPos=0;		
-		var curhash = Json.stringify([szs_inventory,szs_brett]);
+		var z_names:Array<Int> = ziele[aktuellesZielIdx][2];
+		var curhash = Json.stringify([szs_inventory,szs_brett,z_names]);
 		var i = undoPos[aktuellesZielIdx];
+
+
 		while (i<undoStack[aktuellesZielIdx].length){
+		trace("B" +i);
 			var zs = undoStack[aktuellesZielIdx][i];
 			if (curhash!=zs.hash){
 				szs_inventory=Copy.copy(zs.i);
@@ -1984,6 +2119,8 @@ function tueRedo(){
 				do_playSound(0);
 				undoPos[aktuellesZielIdx]=i;
 				forcerender=true;
+				ziele[aktuellesZielIdx][2]=Copy.copy(z_names);
+
 				return;
 			} else {
 				if (i>0){
@@ -2070,7 +2207,7 @@ function tueRedo(){
 		if (zeigBetaNotice){
 			var oldfont = Text.font;
 			Text.font="nokia";
-			Text.display(3,Gfx.screenheight-10,"Beta: please do not distribute",Col.BLACK);
+			Text.display(3,Gfx.screenheight-10,"Beta: please do not distribute",0x00ffff);
 			Text.font=oldfont;
 		}
 	}
@@ -2123,7 +2260,7 @@ function tueRedo(){
 			forcerender=true;
 		}
 
-		var keyrepeat=Math.floor(Core.fps/5);
+		var keyrepeat=Math.floor(Core.fps/10);
 
 		if (Input.justpressed(Key.A)&&enableEditor){
 			editmodus=!editmodus;
@@ -2332,15 +2469,20 @@ function tueRedo(){
 		
 		Gfx.drawimage(0,0,"31/bg");
 
-		for (i in 0...ziele.length){
+		var ziele_zeilen=4;
+		var zeile_lange = Math.ceil(ziele.length/ziele_zeilen);
+		
+		var step = Math.floor(117/zeile_lange);
+		var stepy = Math.floor(21/ziele_zeilen);
+		var winbox_height = stepy-1;
 
-			var gx = i;
-			var gy = 0;
+		for (i in 0...ziele.length){
+			var gx = i%zeile_lange;
+			var gy = Math.floor(i/zeile_lange);
 			var gw=117;
-			var step = Math.floor(117/ziele.length);
 
 			var px = 74 + step*gx;
-			var py = 22;
+			var py = 22+stepy*gy;
 			
 			if (editmodus && Mouse.leftclick()){
 				if (Mouse.x>=(px-4)&&Mouse.y>=(py-2) && (Mouse.x<(px-2+9+2)) && (Mouse.y<(py-2+9))){
@@ -2350,15 +2492,16 @@ function tueRedo(){
 
 			if (geloest[i]==ziele[i][0]){
 				// Gfx.drawimage(px+1,py+1,"31/geloest");	
-				Gfx.fillbox(px,py,step-1,20,0x008282);	
+				Gfx.fillbox(px,py,step-1,winbox_height,0x008282);	
 			}  else {
-				Gfx.fillbox(px,py,step-1,20,0x000000);
+				Gfx.fillbox(px,py,step-1,winbox_height,0x000000);
 			}
 
 			if (i==aktuellesZielIdx){
-				// Gfx.drawimage(px,py,"31/level_highlight");			
-				Gfx.drawline(px,py+1,px+step-1,py,0xffff00);		
-				Gfx.drawline(px,py+1+19,px+step-1,py+19,0xffff00);
+				// Gfx.drawimage(px,py,"31/level_highlight");	
+				Gfx.drawbox(px,py,step-1,stepy-1,0xffff00);		
+				//Gfx.drawline(px,py+1,px+step-1,py,0xffff00);		
+				//Gfx.drawline(px,py+1+19,px+step-1,py+19,0xffff00);
 				// Gfx.drawline(px,py+20,px+step-1,py+20,0xffff00);
 			}  
 
@@ -2452,7 +2595,7 @@ function tueRedo(){
 		if ( (undoPos[aktuellesZielIdx]+1)<undoStack[aktuellesZielIdx].length){
 
 			if (IMGUI.pressbutton(
-					"rückgängig",
+					"rueckgängig",
 					"31/button_sm",
 					"31/button_sm_down",
 					"31/btn_wiederholen",
@@ -2462,6 +2605,8 @@ function tueRedo(){
 					|| Input.delaypressed(Key.Y,keyrepeat)
 					)
 			{
+
+				trace("X");
 					tueRedo();
 			}
 		} else {
@@ -2591,16 +2736,17 @@ function tueRedo(){
 		var zielb_h=88;
 		
 		//ziel zeigen
-		if (aktuellesZielIdx>=48){
-			var image_s = aktuellesZielIdx==48 ? "leererlevel" : "letzterlevel";
+		// if (aktuellesZielIdx>=48){
+		// 	var image_s = aktuellesZielIdx==48 ? "leererlevel" : "letzterlevel";
 
-			var ziel_darstellung_w=Gfx.imagewidth(image_s);
-			var ziel_darstellung_h=Gfx.imageheight(image_s);
+		// 	var ziel_darstellung_w=Gfx.imagewidth(image_s);
+		// 	var ziel_darstellung_h=Gfx.imageheight(image_s);
 
-			var ziel_x=zielb_x+zielb_w/2-ziel_darstellung_w/2;
-			var ziel_y=zielb_y+zielb_h/2-ziel_darstellung_h/2;
-			Gfx.drawimage(ziel_x,ziel_y,image_s);
-		} else {
+		// 	var ziel_x=zielb_x+zielb_w/2-ziel_darstellung_w/2;
+		// 	var ziel_y=zielb_y+zielb_h/2-ziel_darstellung_h/2;
+		// 	Gfx.drawimage(ziel_x,ziel_y,image_s);
+		// } else 
+		{
 			var alevel = aktuellesZiel;
 			var z_raster = alevel.ziel;
 			var z_w = z_raster[0].length;

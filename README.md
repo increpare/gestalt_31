@@ -1,3 +1,7 @@
-# RUESTUNG
+# Gestalt 3.1
 
-possible thing for 7DRL
+This game is made with the Haxegon engine.  
+
+Instructions for compiling haxegon games can be found here : 
+
+http://www.haxegon.com 
